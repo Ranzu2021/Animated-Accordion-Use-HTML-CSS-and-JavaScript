@@ -1,0 +1,57 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.accordion{
+    width: 500px;
+    height: auto;
+    margin: 50px auto;
+    background: darkgrey;
+    padding: 20px;
+    position: relative;
+}
+.contentBx{
+    margin: 10px 0;
+    background: aliceblue;
+    position: relative;
+}
+.accordion .contentBx .title{
+    position: relative;
+    background: rgb(250, 198, 129);
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.accordion .contentBx .title::before{
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.accordion .contentBx.active .title::before{
+    content: '-';
+}
+.accordion .contentBx .content{
+    position: relative;
+    font-size: 14px;
+    background: bisque;
+    height: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: .3s;
+}
+.accordion .contentBx .content p{
+    margin: 0;
+}
+.accordion .contentBx.active .content{
+    height: 80px;
+    padding: 10px 20px;
+}
